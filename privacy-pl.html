@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polityka prywatności — GlowDeck</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         max-width: 760px; margin: 0 auto; padding: 24px 20px 64px;
+         line-height: 1.6; }
+  h1 { font-size: 1.6rem; border-bottom: 1px solid #8884; padding-bottom: 8px; }
+  h2 { font-size: 1.2rem; margin-top: 2em; }
+  h3 { font-size: 1rem; margin-top: 1.6em; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { border: 1px solid #8884; padding: 6px 10px; text-align: left; vertical-align: top; }
+  code { font-size: 0.85em; }
+  .lang { font-size: 0.9rem; margin-bottom: 1.5em; }
+</style>
+</head>
+<body>
+
+<p class="lang"><a href="index.html">English version</a></p>
+
+<h1>Polityka prywatności — GlowDeck</h1>
+
+<p><strong>Data ostatniej aktualizacji:</strong> 25 września 2026</p>
+
+<p>Niniejsza polityka prywatności opisuje, jak aplikacja GlowDeck (dalej „Aplikacja") gromadzi, przetwarza i chroni dane użytkownika. Aplikację rozwija Kanar Studio (dalej „Deweloper").</p>
+
+<h2>1. Administrator danych</h2>
+
+<p>Administratorem Twoich danych w rozumieniu RODO jest:</p>
+
+<p><strong>Kanar Studio</strong><br>
+E-mail: <a href="mailto:wawrzenczyk.piotr@gmail.com">wawrzenczyk.piotr@gmail.com</a></p>
+
+<h2>2. Jakie dane gromadzi Aplikacja</h2>
+
+<h3>2.1 Dane przechowywane wyłącznie na urządzeniu</h3>
+
+<p>Aplikacja przechowuje następujące dane <strong>lokalnie</strong> na Twoim urządzeniu (w bazie danych aplikacji i prywatnym katalogu plików). Te dane <strong>nie są wysyłane na żaden serwer</strong>:</p>
+
+<ul>
+<li><strong>Notatki</strong> — tekst notatek, kolory, ustawienia alarmów</li>
+<li><strong>Zdjęcia</strong> — zdjęcia zaimportowane z galerii, kopiowane do prywatnego katalogu aplikacji (<code>filesDir/photos/</code>)</li>
+<li><strong>Wydarzenia kalendarza</strong> — odczytywane z systemowego dostawcy treści (CalendarContract), używane wyłącznie do wyświetlenia na tapecie. Aplikacja nie przechowuje kopii wydarzeń poza urządzeniem</li>
+<li><strong>Ustawienia tapety</strong> — preferencje efektów, kolorów, układu widgetów</li>
+<li><strong>Dźwięki alarmów</strong> — jeśli wybrałeś własny dźwięk alarmu, jego URI jest przechowywany lokalnie</li>
+</ul>
+
+<h3>2.2 Dane niezbędne do działania funkcji</h3>
+
+<p>Aplikacja nie wymaga tworzenia konta, nie zbiera adresu e-mail, imienia ani nazwiska. Nie zbiera danych demograficznych.</p>
+
+<h2>3. Uprawnienia i ich uzasadnienie</h2>
+
+<p>Aplikacja korzysta z następujących uprawnień systemu Android:</p>
+
+<table>
+<tr><th>Uprawnienie</th><th>Cel</th><th>Wymagane?</th></tr>
+<tr><td><code>SET_WALLPAPER</code></td><td>Ustawienie Aplikacji jako tapety systemowej</td><td>Tak (core functionality)</td></tr>
+<tr><td><code>READ_CALENDAR</code></td><td>Odczyt wydarzeń kalendarza dla widgetu kalendarza</td><td>Opcjonalne — proszone kontekstowo przy dodawaniu widgetu kalendarza</td></tr>
+<tr><td><code>POST_NOTIFICATIONS</code></td><td>Wyświetlanie powiadomienia alarmu notatki</td><td>Opcjonalne — alarm działa także bez powiadomień (dźwięk + wibracja)</td></tr>
+<tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Dokładne wyzwolenie alarmu notatki o zadanym czasie</td><td>Opcjonalne — bez tego alarm działa z opóźnieniem w trybie Doze</td></tr>
+<tr><td><code>VIBRATE</code></td><td>Wibracja przy wyzwoleniu alarmu</td><td>Tak (dla funkcji alarmu)</td></tr>
+<tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Ponowne zaplanowanie alarmów po restarcie urządzenia</td><td>Tak (dla funkcji alarmu)</td></tr>
+<tr><td><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td><td>Usługa pierwszoplanowa odtwarzająca alarm (dźwięk + wibracja) do momentu zamknięcia przez użytkownika</td><td>Tak (dla funkcji alarmu)</td></tr>
+<tr><td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td><td>Ładowanie reklam (AdMob) — banerów w ekranach ustawień oraz reklam rewarded</td><td>Tylko dla funkcji reklam</td></tr>
+<tr><td><code>AD_ID</code> (Google Play services)</td><td>Identyfikator reklamowy używany przez Google Mobile Ads SDK</td><td>Przy każdym wczytaniu reklam</td></tr>
+</table>
+
+<h2>4. Gdzie są przechowywane dane</h2>
+
+<ul>
+<li><strong>Dane użytkownika</strong> (notatki, zdjęcia, ustawienia, kalendarz) — <strong>wyłącznie na Twoim urządzeniu</strong> w prywatnym katalogu aplikacji. Nie są przesyłane na żadne serwery zewnętrzne.</li>
+<li>Odinstalowanie Aplikacji powoduje trwałe usunięcie wszystkich danych użytkownika z urządzenia.</li>
+</ul>
+
+<h2>5. Reklamy (Google AdMob)</h2>
+
+<p>Aplikacja wyświetla reklamy dostarczane przez <strong>Google AdMob</strong> w dwóch formach:</p>
+
+<ul>
+<li><strong>Banery</strong> — zakotwiczony baner adaptacyjny na dole ekranów ustawień oraz w pickerze widgetów. Znika na stałe po zakupie wersji płatnej.</li>
+<li><strong>Reklamy rewarded</strong> — wyświetlane <strong>wyłącznie wtedy, gdy sam naciśniesz „Watch ad"</strong>, aby odblokować funkcje premium na 30 minut. Aplikacja nigdy nie pokazuje reklam interstitial.</li>
+</ul>
+
+<p>Gdy reklamy są wczytywane lub wyświetlane, Google Mobile Ads SDK może gromadzić i udostępniać Google:</p>
+
+<ul>
+<li><strong>Identyfikatory urządzenia</strong> (identyfikator reklamowy) — do wyświetlania reklam i zapobiegania nadużyciom</li>
+<li><strong>Interakcje z reklamą</strong> — np. informację, że reklama została obejrzana lub dokończona</li>
+<li><strong>Diagnostykę SDK</strong> — dane o awariach i wydajności komponentu reklamowego</li>
+</ul>
+
+<p>Dane te są przetwarzane przez Google zgodnie z <a href="https://policies.google.com/privacy">Polityką prywatności Google</a> i zasadami <a href="https://policies.google.com/technologies/ads">Reklam Google</a>.</p>
+
+<h3>Zgoda (EOG / RODO)</h3>
+
+<p>Jeśli przebywasz w Europejskim Obszarze Gospodarczym, Aplikacja zapyta o zgodę przez <strong>Google User Messaging Platform (UMP)</strong>, zanim zostanie wysłane jakiekolwiek żądanie reklamy. Możesz wybrać reklamy spersonalizowane lub niespersonalizowane albo odmówić — odmowa nigdy nie blokuje podstawowych funkcji Aplikacji (widgety premium można nadal odblokować darmowym jednorazowym trialem).</p>
+
+<h2>6. Udostępnianie danych stronom trzecim</h2>
+
+<p>Deweloper <strong>nie udostępnia</strong> Twoich danych osobowych (notatki, zdjęcia, ustawienia) żadnym stronom trzecim — te dane nigdy nie opuszczają urządzenia. Jedyną stroną trzecią otrzymującą dane jest <strong>Google AdMob</strong>, wyłącznie w zakresie danych reklamowych opisanych w sekcji 5 i tylko w związku z wyświetlaniem reklam.</p>
+
+<h2>7. Prawa użytkownika (RODO / GDPR)</h2>
+
+<p>Zgodnie z RODO przysługują Ci następujące prawa:</p>
+
+<ul>
+<li><strong>Prawo dostępu</strong> — możesz sprawdzić, jakie dane są przechowywane (wszystkie są na Twoim urządzeniu)</li>
+<li><strong>Prawo do usunięcia</strong> — odinstalowanie Aplikacji powoduje trwałe usunięcie wszystkich danych</li>
+<li><strong>Prawo do korekty</strong> — możesz edytować notatki i ustawienia wewnątrz Aplikacji</li>
+<li><strong>Prawo do wycofania zgody</strong> — możesz cofnąć uprawnienia w Ustawieniach Androida (Ustawienia → Aplikacje → GlowDeck → Uprawnienia) oraz zresetować lub wycofać zgodę reklamową w ustawieniach reklam Androida (Ustawienia → Google → Reklamy)</li>
+</ul>
+
+<p>Aby skorzystać z tych praw, skontaktuj się z Deweloperem pod adresem e-mail wskazanym w sekcji 1.</p>
+
+<h2>8. Dzieci</h2>
+
+<p>Aplikacja nie jest skierowana do dzieci poniżej 13 roku życia i nie zbiera świadomie danych od dzieci. Jeśli uważasz, że dziecko przekazało nam dane, skontaktuj się z nami, aby je usunąć.</p>
+
+<h2>9. Bezpieczeństwo</h2>
+
+<p>Dane użytkownika są przechowywane w prywatnym katalogu aplikacji, do którego inne aplikacje nie mają dostępu (od Android 4.4 — sandbox aplikacji). Sama Aplikacja nie przesyła Twoich danych osobowych przez sieć; komunikacja związana z reklamami jest obsługiwana przez Google Mobile Ads SDK przez szyfrowane połączenia HTTPS.</p>
+
+<h2>10. Zmiany polityki prywatności</h2>
+
+<p>Deweloper zastrzega sobie prawo do aktualizacji niniejszej polityki prywatności. Zmiany będą publikowane na tej stronie. Zalecamy okresowe sprawdzanie tej strony w celu zapoznania się z ewentualnymi zmianami.</p>
+
+<h2>11. Kontakt</h2>
+
+<p>W razie pytań dotyczących polityki prywatności skontaktuj się z nami:</p>
+
+<p><strong>Kanar Studio</strong><br>
+E-mail: <a href="mailto:wawrzenczyk.piotr@gmail.com">wawrzenczyk.piotr@gmail.com</a></p>
+
+</body>
+</html>

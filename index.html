@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — GlowDeck</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         max-width: 760px; margin: 0 auto; padding: 24px 20px 64px;
+         line-height: 1.6; }
+  h1 { font-size: 1.6rem; border-bottom: 1px solid #8884; padding-bottom: 8px; }
+  h2 { font-size: 1.2rem; margin-top: 2em; }
+  h3 { font-size: 1rem; margin-top: 1.6em; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { border: 1px solid #8884; padding: 6px 10px; text-align: left; vertical-align: top; }
+  code { font-size: 0.85em; }
+  .lang { font-size: 0.9rem; margin-bottom: 1.5em; }
+</style>
+</head>
+<body>
+
+<p class="lang"><a href="privacy-pl.html">Wersja polska</a></p>
+
+<h1>Privacy Policy — GlowDeck</h1>
+
+<p><strong>Last updated:</strong> September 25, 2026</p>
+
+<p>This privacy policy describes how the GlowDeck application (hereinafter "the App") collects, processes, and protects user data. The App is developed by Kanar Studio (hereinafter "the Developer").</p>
+
+<h2>1. Data Controller</h2>
+
+<p>The data controller within the meaning of the GDPR is:</p>
+
+<p><strong>Kanar Studio</strong><br>
+Email: <a href="mailto:wawrzenczyk.piotr@gmail.com">wawrzenczyk.piotr@gmail.com</a></p>
+
+<h2>2. What Data the App Collects</h2>
+
+<h3>2.1 Data stored exclusively on the device</h3>
+
+<p>The App stores the following data <strong>locally</strong> on your device (in the app's database and private file directory). This data <strong>is never sent to any server</strong>:</p>
+
+<ul>
+<li><strong>Notes</strong> — note text, colors, alarm settings</li>
+<li><strong>Photos</strong> — photos imported from the gallery, copied to the app's private directory (<code>filesDir/photos/</code>)</li>
+<li><strong>Calendar events</strong> — read from the system content provider (CalendarContract), used solely for display on the wallpaper. The App does not store a copy of events outside the device</li>
+<li><strong>Wallpaper settings</strong> — effect preferences, colors, widget layout</li>
+<li><strong>Alarm sounds</strong> — if you selected a custom alarm sound, its URI is stored locally</li>
+</ul>
+
+<h3>2.2 Data necessary for functionality</h3>
+
+<p>The App does not require account creation, does not collect email addresses, names, or surnames. It does not collect demographic data.</p>
+
+<h2>3. Permissions and their justification</h2>
+
+<p>The App uses the following Android system permissions:</p>
+
+<table>
+<tr><th>Permission</th><th>Purpose</th><th>Required?</th></tr>
+<tr><td><code>SET_WALLPAPER</code></td><td>Setting the App as the system wallpaper</td><td>Yes (core functionality)</td></tr>
+<tr><td><code>READ_CALENDAR</code></td><td>Reading calendar events for the calendar widget</td><td>Optional — requested contextually when adding the calendar widget</td></tr>
+<tr><td><code>POST_NOTIFICATIONS</code></td><td>Displaying the note alarm notification</td><td>Optional — alarm also works without notifications (sound + vibration)</td></tr>
+<tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Exact alarm triggering at the set time</td><td>Optional — without it, alarm is delayed in Doze mode</td></tr>
+<tr><td><code>VIBRATE</code></td><td>Vibration when alarm triggers</td><td>Yes (for alarm feature)</td></tr>
+<tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Re-scheduling alarms after device reboot</td><td>Yes (for alarm feature)</td></tr>
+<tr><td><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td><td>Foreground service playing the alarm (sound + vibration) until dismissed by the user</td><td>Yes (for alarm feature)</td></tr>
+<tr><td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td><td>Loading ads (AdMob) — banners in the settings screens and rewarded ads</td><td>Only for the ads feature</td></tr>
+<tr><td><code>AD_ID</code> (Google Play services)</td><td>Advertising ID used by Google Mobile Ads SDK</td><td>Whenever ads are loaded</td></tr>
+</table>
+
+<h2>4. Where Data Is Stored</h2>
+
+<ul>
+<li><strong>User data</strong> (notes, photos, settings, calendar) — <strong>exclusively on your device</strong> in the app's private directory. It is not transmitted to any external servers.</li>
+<li>Uninstalling the App permanently deletes all user data from the device.</li>
+</ul>
+
+<h2>5. Advertising (Google AdMob)</h2>
+
+<p>The App displays ads provided by <strong>Google AdMob</strong> in two forms:</p>
+
+<ul>
+<li><strong>Banner ads</strong> — an anchored adaptive banner displayed at the bottom of the settings screens and in the widget picker. It is hidden permanently after purchasing the paid version.</li>
+<li><strong>Rewarded ads</strong> — shown <strong>only when you explicitly tap "Watch ad"</strong> to unlock premium features for 30 minutes. The App never shows interstitial ads.</li>
+</ul>
+
+<p>When ads are loaded or displayed, the Google Mobile Ads SDK may collect and share with Google:</p>
+
+<ul>
+<li><strong>Device or other IDs</strong> (advertising ID) — for ad serving and fraud prevention</li>
+<li><strong>Ad interactions</strong> — e.g., that an ad was viewed or completed</li>
+<li><strong>SDK diagnostics</strong> — crash and performance data of the ads component</li>
+</ul>
+
+<p>These data are processed by Google under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads">Google Advertising</a> terms.</p>
+
+<h3>Consent (EEA / GDPR)</h3>
+
+<p>If you are in the European Economic Area, the App asks for your consent via the <strong>Google User Messaging Platform (UMP)</strong> before any ad request is made. You can choose personalized or non-personalized ads, or decline — declining never blocks the App's core features (premium widgets can still be unlocked via the free first-time trial).</p>
+
+<h2>6. Sharing Data with Third Parties</h2>
+
+<p>The Developer <strong>does not share</strong> your personal data (notes, photos, settings) with any third parties — that data never leaves your device. The only third party receiving data is <strong>Google AdMob</strong>, limited to the advertising data described in section 5 and only in connection with displaying ads.</p>
+
+<h2>7. User Rights (GDPR)</h2>
+
+<p>Under the GDPR, you have the following rights:</p>
+
+<ul>
+<li><strong>Right of access</strong> — you can check what data is stored (all of it is on your device)</li>
+<li><strong>Right to erasure</strong> — uninstalling the App permanently deletes all data</li>
+<li><strong>Right to rectification</strong> — you can edit notes and settings within the App</li>
+<li><strong>Right to withdraw consent</strong> — you can revoke permissions in Android Settings (Settings → Apps → GlowDeck → Permissions) and reset or withdraw your ad consent via the Android ads settings (Settings → Google → Ads)</li>
+</ul>
+
+<p>To exercise these rights, contact the Developer at the email address indicated in section 1.</p>
+
+<h2>8. Children</h2>
+
+<p>The App is not directed at children under the age of 13 and does not knowingly collect data from children. If you believe a child has provided us with data, please contact us to have it deleted.</p>
+
+<h2>9. Security</h2>
+
+<p>User data is stored in the app's private directory, which is not accessible to other apps (since Android 4.4 — app sandbox). The App itself does not transmit your personal data over the network; communication related to ads is handled by the Google Mobile Ads SDK over encrypted HTTPS connections.</p>
+
+<h2>10. Changes to the Privacy Policy</h2>
+
+<p>The Developer reserves the right to update this privacy policy. Changes will be published on this page. We recommend periodically checking this page for any changes.</p>
+
+<h2>11. Contact</h2>
+
+<p>If you have questions about the privacy policy, please contact us:</p>
+
+<p><strong>Kanar Studio</strong><br>
+Email: <a href="mailto:wawrzenczyk.piotr@gmail.com">wawrzenczyk.piotr@gmail.com</a></p>
+
+</body>
+</html>
