@@ -24,7 +24,7 @@
 
 <h1>Polityka prywatności — GlowDeck</h1>
 
-<p><strong>Data ostatniej aktualizacji:</strong> 25 września 2026</p>
+<p><strong>Data ostatniej aktualizacji:</strong> 1 października 2026</p>
 
 <p>Niniejsza polityka prywatności opisuje, jak aplikacja GlowDeck (dalej „Aplikacja") gromadzi, przetwarza i chroni dane użytkownika. Aplikację rozwija Kanar Studio (dalej „Deweloper").</p>
 
@@ -42,11 +42,10 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 <p>Aplikacja przechowuje następujące dane <strong>lokalnie</strong> na Twoim urządzeniu (w bazie danych aplikacji i prywatnym katalogu plików). Te dane <strong>nie są wysyłane na żaden serwer</strong>:</p>
 
 <ul>
-<li><strong>Notatki</strong> — tekst notatek, kolory, ustawienia alarmów</li>
+<li><strong>Notatki</strong> — tekst notatek, kolory</li>
 <li><strong>Zdjęcia</strong> — zdjęcia zaimportowane z galerii, kopiowane do prywatnego katalogu aplikacji (<code>filesDir/photos/</code>)</li>
 <li><strong>Wydarzenia kalendarza</strong> — odczytywane z systemowego dostawcy treści (CalendarContract), używane wyłącznie do wyświetlenia na tapecie. Aplikacja nie przechowuje kopii wydarzeń poza urządzeniem</li>
 <li><strong>Ustawienia tapety</strong> — preferencje efektów, kolorów, układu widgetów</li>
-<li><strong>Dźwięki alarmów</strong> — jeśli wybrałeś własny dźwięk alarmu, jego URI jest przechowywany lokalnie</li>
 </ul>
 
 <h3>2.2 Dane niezbędne do działania funkcji</h3>
@@ -61,11 +60,6 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 <tr><th>Uprawnienie</th><th>Cel</th><th>Wymagane?</th></tr>
 <tr><td><code>SET_WALLPAPER</code></td><td>Ustawienie Aplikacji jako tapety systemowej</td><td>Tak (core functionality)</td></tr>
 <tr><td><code>READ_CALENDAR</code></td><td>Odczyt wydarzeń kalendarza dla widgetu kalendarza</td><td>Opcjonalne — proszone kontekstowo przy dodawaniu widgetu kalendarza</td></tr>
-<tr><td><code>POST_NOTIFICATIONS</code></td><td>Wyświetlanie powiadomienia alarmu notatki</td><td>Opcjonalne — alarm działa także bez powiadomień (dźwięk + wibracja)</td></tr>
-<tr><td><code>SCHEDULE_EXACT_ALARM</code></td><td>Dokładne wyzwolenie alarmu notatki o zadanym czasie</td><td>Opcjonalne — bez tego alarm działa z opóźnieniem w trybie Doze</td></tr>
-<tr><td><code>VIBRATE</code></td><td>Wibracja przy wyzwoleniu alarmu</td><td>Tak (dla funkcji alarmu)</td></tr>
-<tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Ponowne zaplanowanie alarmów po restarcie urządzenia</td><td>Tak (dla funkcji alarmu)</td></tr>
-<tr><td><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td><td>Usługa pierwszoplanowa odtwarzająca alarm (dźwięk + wibracja) do momentu zamknięcia przez użytkownika</td><td>Tak (dla funkcji alarmu)</td></tr>
 <tr><td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td><td>Ładowanie reklam (AdMob) — banerów w ekranach ustawień oraz reklam rewarded</td><td>Tylko dla funkcji reklam</td></tr>
 <tr><td><code>AD_ID</code> (Google Play services)</td><td>Identyfikator reklamowy używany przez Google Mobile Ads SDK</td><td>Przy każdym wczytaniu reklam</td></tr>
 </table>
@@ -82,7 +76,7 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 <p>Aplikacja wyświetla reklamy dostarczane przez <strong>Google AdMob</strong> w dwóch formach:</p>
 
 <ul>
-<li><strong>Banery</strong> — zakotwiczony baner adaptacyjny na dole ekranów ustawień oraz w pickerze widgetów. Znika na stałe po zakupie wersji płatnej.</li>
+<li><strong>Banery</strong> — zakotwiczony baner adaptacyjny na dole ekranów ustawień oraz w pickerze widgetów. Jest ukrywany, gdy aktywny jest dostęp premium.</li>
 <li><strong>Reklamy rewarded</strong> — wyświetlane <strong>wyłącznie wtedy, gdy sam naciśniesz „Watch ad"</strong>, aby odblokować funkcje premium na 30 minut. Aplikacja nigdy nie pokazuje reklam interstitial.</li>
 </ul>
 
