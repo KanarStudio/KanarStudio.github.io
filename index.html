@@ -24,7 +24,7 @@
 
 <h1>Privacy Policy — GlowDeck</h1>
 
-<p><strong>Last updated:</strong> October 1, 2026</p>
+<p><strong>Last updated:</strong> October 30, 2026</p>
 
 <p>This privacy policy describes how the GlowDeck application (hereinafter "the App") collects, processes, and protects user data. The App is developed by Kanar Studio (hereinafter "the Developer").</p>
 
@@ -42,8 +42,9 @@ Email: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 <p>The App stores the following data <strong>locally</strong> on your device (in the app's database and private file directory). This data <strong>is never sent to any server</strong>:</p>
 
 <ul>
-<li><strong>Notes</strong> — note text, colors</li>
+<li><strong>Notes</strong> — note text, colors, checklists</li>
 <li><strong>Photos</strong> — photos imported from the gallery, copied to the app's private directory (<code>filesDir/photos/</code>)</li>
+<li><strong>Video clips</strong> — videos imported for video-frame widgets, copied to the app's private directory (<code>filesDir/videos/</code>)</li>
 <li><strong>Calendar events</strong> — read from the system content provider (CalendarContract), used solely for display on the wallpaper. The App does not store a copy of events outside the device</li>
 <li><strong>Wallpaper settings</strong> — effect preferences, colors, widget layout</li>
 </ul>
@@ -60,24 +61,30 @@ Email: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 <tr><th>Permission</th><th>Purpose</th><th>Required?</th></tr>
 <tr><td><code>SET_WALLPAPER</code></td><td>Setting the App as the system wallpaper</td><td>Yes (core functionality)</td></tr>
 <tr><td><code>READ_CALENDAR</code></td><td>Reading calendar events for the calendar widget</td><td>Optional — requested contextually when adding the calendar widget</td></tr>
-<tr><td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td><td>Loading ads (AdMob) — banners in the settings screens and rewarded ads</td><td>Only for the ads feature</td></tr>
+<tr><td><code>CAMERA</code></td><td>Toggling the device flashlight (torch) from the Shortcut Dock widget</td><td>Optional — requested only when adding the Flashlight shortcut slot; never captures photos or video</td></tr>
+<tr><td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td><td>Loading ads (AdMob) and verifying in-app purchases (Google Play Billing)</td><td>Only for ads and Play Billing</td></tr>
 <tr><td><code>AD_ID</code> (Google Play services)</td><td>Advertising ID used by Google Mobile Ads SDK</td><td>Whenever ads are loaded</td></tr>
+<tr><td><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_MEDIA_PROCESSING</code></td><td>Background video export (Reel Studio) — foreground service while the MP4 is being generated</td><td>Only during a user-initiated export</td></tr>
+<tr><td><code>POST_NOTIFICATIONS</code></td><td>Progress and result notifications for video export</td><td>Optional (Android 13+) — export also works without it, just silently</td></tr>
 </table>
 
 <h2>4. Where Data Is Stored</h2>
 
 <ul>
-<li><strong>User data</strong> (notes, photos, settings, calendar) — <strong>exclusively on your device</strong> in the app's private directory. It is not transmitted to any external servers.</li>
+<li><strong>User data</strong> (notes, photos, videos, settings, calendar) — <strong>exclusively on your device</strong> in the app's private directory (<code>filesDir</code>). It is not transmitted to any external servers.</li>
+<li><strong>Videos exported via Reel Studio</strong> — written only at your explicit request to the <code>Movies/GlowDeck</code> folder in your device's gallery; you manage them like any other video file.</li>
 <li>Uninstalling the App permanently deletes all user data from the device.</li>
 </ul>
 
-<h2>5. Advertising (Google AdMob)</h2>
+<h2>5. Advertising (Google AdMob) &amp; In-App Purchases (Google Play Billing)</h2>
 
-<p>The App displays ads provided by <strong>Google AdMob</strong> in two forms:</p>
+<p>The App is offered in a freemium model with ads provided by <strong>Google AdMob</strong> and an optional one-time "Unlock forever" purchase via <strong>Google Play Billing</strong>:</p>
 
 <ul>
-<li><strong>Banner ads</strong> — an anchored adaptive banner displayed at the bottom of the settings screens and in the widget picker. It is hidden while premium access is active.</li>
-<li><strong>Rewarded ads</strong> — shown <strong>only when you explicitly tap "Watch ad"</strong> to unlock premium features for 30 minutes. The App never shows interstitial ads.</li>
+<li><strong>Banner ads</strong> — displayed at the bottom of the settings screens and in the widget picker. Hidden permanently after purchasing the paid version.</li>
+<li><strong>Rewarded ads</strong> — shown <strong>only when you explicitly tap "Watch ad"</strong> to unlock premium features for 30 minutes.</li>
+<li><strong>Interstitial ads</strong> — occasional breakpoint ads in the free tier (capped per day and never shown during the first session, during an active 30-minute ad unlock, or after purchasing the paid version).</li>
+<li><strong>In-app purchases</strong> — handled exclusively by Google Play Billing. The App never accesses your payment details; it only checks purchase status locally via the Google Play API.</li>
 </ul>
 
 <p>When ads are loaded or displayed, the Google Mobile Ads SDK may collect and share with Google:</p>
@@ -92,7 +99,7 @@ Email: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 
 <h3>Consent (EEA / GDPR)</h3>
 
-<p>If you are in the European Economic Area, the App asks for your consent via the <strong>Google User Messaging Platform (UMP)</strong> before any ad request is made. You can choose personalized or non-personalized ads, or decline — declining never blocks the App's core features (premium widgets can still be unlocked via the free first-time trial).</p>
+<p>If you are in the European Economic Area, the App asks for your consent via the <strong>Google User Messaging Platform (UMP)</strong> before any ad request is made. You can choose personalized or non-personalized ads, or decline — declining never blocks the App's core features (premium widgets can still be unlocked by watching a rewarded ad).</p>
 
 <h2>6. Sharing Data with Third Parties</h2>
 
@@ -117,7 +124,7 @@ Email: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 
 <h2>9. Security</h2>
 
-<p>User data is stored in the app's private directory, which is not accessible to other apps (since Android 4.4 — app sandbox). The App itself does not transmit your personal data over the network; communication related to ads is handled by the Google Mobile Ads SDK over encrypted HTTPS connections.</p>
+<p>User data is stored in the app's private directory, which is not accessible to other apps (since Android 4.4 — app sandbox). The App itself does not transmit your personal data over the network; communication related to rewarded ads is handled by the Google Mobile Ads SDK over encrypted HTTPS connections.</p>
 
 <h2>10. Changes to the Privacy Policy</h2>
 
@@ -129,6 +136,9 @@ Email: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 
 <p><strong>Kanar Studio</strong><br>
 Email: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
+
+<hr>
+<p><em>This privacy policy was last updated to reflect the Reel Studio video export feature and its associated Android permissions.</em></p>
 
 </body>
 </html>

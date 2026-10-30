@@ -24,7 +24,7 @@
 
 <h1>Polityka prywatności — GlowDeck</h1>
 
-<p><strong>Data ostatniej aktualizacji:</strong> 1 października 2026</p>
+<p><strong>Data ostatniej aktualizacji:</strong> 30 października 2026</p>
 
 <p>Niniejsza polityka prywatności opisuje, jak aplikacja GlowDeck (dalej „Aplikacja") gromadzi, przetwarza i chroni dane użytkownika. Aplikację rozwija Kanar Studio (dalej „Deweloper").</p>
 
@@ -42,8 +42,9 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 <p>Aplikacja przechowuje następujące dane <strong>lokalnie</strong> na Twoim urządzeniu (w bazie danych aplikacji i prywatnym katalogu plików). Te dane <strong>nie są wysyłane na żaden serwer</strong>:</p>
 
 <ul>
-<li><strong>Notatki</strong> — tekst notatek, kolory</li>
+<li><strong>Notatki</strong> — tekst notatek, kolory, checklisty</li>
 <li><strong>Zdjęcia</strong> — zdjęcia zaimportowane z galerii, kopiowane do prywatnego katalogu aplikacji (<code>filesDir/photos/</code>)</li>
+<li><strong>Klipy wideo</strong> — filmy zaimportowane do widgetów video frame, kopiowane do prywatnego katalogu aplikacji (<code>filesDir/videos/</code>)</li>
 <li><strong>Wydarzenia kalendarza</strong> — odczytywane z systemowego dostawcy treści (CalendarContract), używane wyłącznie do wyświetlenia na tapecie. Aplikacja nie przechowuje kopii wydarzeń poza urządzeniem</li>
 <li><strong>Ustawienia tapety</strong> — preferencje efektów, kolorów, układu widgetów</li>
 </ul>
@@ -60,24 +61,30 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 <tr><th>Uprawnienie</th><th>Cel</th><th>Wymagane?</th></tr>
 <tr><td><code>SET_WALLPAPER</code></td><td>Ustawienie Aplikacji jako tapety systemowej</td><td>Tak (core functionality)</td></tr>
 <tr><td><code>READ_CALENDAR</code></td><td>Odczyt wydarzeń kalendarza dla widgetu kalendarza</td><td>Opcjonalne — proszone kontekstowo przy dodawaniu widgetu kalendarza</td></tr>
-<tr><td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td><td>Ładowanie reklam (AdMob) — banerów w ekranach ustawień oraz reklam rewarded</td><td>Tylko dla funkcji reklam</td></tr>
+<tr><td><code>CAMERA</code></td><td>Włączanie latarki (torch) z poziomu widgetu Shortcut Dock</td><td>Opcjonalne — proszone wyłącznie przy dodawaniu skrótu Latarka; Aplikacja nigdy nie rejestruje obrazu z kamery</td></tr>
+<tr><td><code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code></td><td>Ładowanie reklam (AdMob) oraz obsługa zakupów (Google Play Billing)</td><td>Tylko dla funkcji reklam i Play Billing</td></tr>
 <tr><td><code>AD_ID</code> (Google Play services)</td><td>Identyfikator reklamowy używany przez Google Mobile Ads SDK</td><td>Przy każdym wczytaniu reklam</td></tr>
+<tr><td><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_MEDIA_PROCESSING</code></td><td>Eksport wideo w tle (Reel Studio) — usługa pierwszoplanowa podczas generowania MP4</td><td>Tylko podczas eksportu zainicjowanego przez użytkownika</td></tr>
+<tr><td><code>POST_NOTIFICATIONS</code></td><td>Powiadomienia o postępie i wyniku eksportu wideo</td><td>Opcjonalne (Android 13+) — eksport działa również bez zgody, wtedy bez powiadomień</td></tr>
 </table>
 
 <h2>4. Gdzie są przechowywane dane</h2>
 
 <ul>
-<li><strong>Dane użytkownika</strong> (notatki, zdjęcia, ustawienia, kalendarz) — <strong>wyłącznie na Twoim urządzeniu</strong> w prywatnym katalogu aplikacji. Nie są przesyłane na żadne serwery zewnętrzne.</li>
+<li><strong>Dane użytkownika</strong> (notatki, zdjęcia, klipy wideo, ustawienia, kalendarz) — <strong>wyłącznie na Twoim urządzeniu</strong> w prywatnym katalogu aplikacji (<code>filesDir</code>). Nie są przesyłane na żadne serwery zewnętrzne.</li>
+<li><strong>Filmy eksportowane przez Reel Studio</strong> — zapisywane na Twoją wyraźną żądanie do folderu <code>Movies/GlowDeck</code> w galerii urządzenia; zarządzasz nimi jak każdym plikiem wideo.</li>
 <li>Odinstalowanie Aplikacji powoduje trwałe usunięcie wszystkich danych użytkownika z urządzenia.</li>
 </ul>
 
-<h2>5. Reklamy (Google AdMob)</h2>
+<h2>5. Reklamy (Google AdMob) i Zakupy w Aplikacji (Google Play Billing)</h2>
 
-<p>Aplikacja wyświetla reklamy dostarczane przez <strong>Google AdMob</strong> w dwóch formach:</p>
+<p>Aplikacja działa w modelu freemium z reklamami dostarczanymi przez <strong>Google AdMob</strong> oraz opcjonalnym jednorazowym zakupem wersji pełnej („Unlock forever") przez <strong>Google Play Billing</strong>:</p>
 
 <ul>
-<li><strong>Banery</strong> — zakotwiczony baner adaptacyjny na dole ekranów ustawień oraz w pickerze widgetów. Jest ukrywany, gdy aktywny jest dostęp premium.</li>
-<li><strong>Reklamy rewarded</strong> — wyświetlane <strong>wyłącznie wtedy, gdy sam naciśniesz „Watch ad"</strong>, aby odblokować funkcje premium na 30 minut. Aplikacja nigdy nie pokazuje reklam interstitial.</li>
+<li><strong>Banery</strong> — wyświetlane na dole ekranów ustawień oraz w pickerze widgetów. Znikają na stałe po zakupie wersji płatnej.</li>
+<li><strong>Reklamy rewarded</strong> — wyświetlane <strong>wyłącznie wtedy, gdy sam naciśniesz „Watch ad"</strong>, aby odblokować funkcje premium na 30 minut.</li>
+<li><strong>Reklamy interstitial</strong> — okazjonalne reklamy pełnoekranowe w wersji darmowej (z limitem dziennym, niewyświetlane w pierwszej sesji, podczas aktywnego 30-minutowego odblokowania ani po zakupie wersji płatnej).</li>
+<li><strong>Zakupy w aplikacji</strong> — realizowane wyłącznie przez Google Play Billing. Aplikacja nie ma dostępu do Twoich danych płatniczych; odpytuje jedynie lokalne API Google Play o status zakupu.</li>
 </ul>
 
 <p>Gdy reklamy są wczytywane lub wyświetlane, Google Mobile Ads SDK może gromadzić i udostępniać Google:</p>
@@ -92,7 +99,7 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 
 <h3>Zgoda (EOG / RODO)</h3>
 
-<p>Jeśli przebywasz w Europejskim Obszarze Gospodarczym, Aplikacja zapyta o zgodę przez <strong>Google User Messaging Platform (UMP)</strong>, zanim zostanie wysłane jakiekolwiek żądanie reklamy. Możesz wybrać reklamy spersonalizowane lub niespersonalizowane albo odmówić — odmowa nigdy nie blokuje podstawowych funkcji Aplikacji (widgety premium można nadal odblokować darmowym jednorazowym trialem).</p>
+<p>Jeśli przebywasz w Europejskim Obszarze Gospodarczym, Aplikacja zapyta o zgodę przez <strong>Google User Messaging Platform (UMP)</strong>, zanim zostanie wysłane jakiekolwiek żądanie reklamy. Możesz wybrać reklamy spersonalizowane lub niespersonalizowane albo odmówić — odmowa nigdy nie blokuje podstawowych funkcji Aplikacji (widgety premium można nadal odblokować obejrzeniem reklamy rewarded).</p>
 
 <h2>6. Udostępnianie danych stronom trzecim</h2>
 
@@ -117,7 +124,7 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 
 <h2>9. Bezpieczeństwo</h2>
 
-<p>Dane użytkownika są przechowywane w prywatnym katalogu aplikacji, do którego inne aplikacje nie mają dostępu (od Android 4.4 — sandbox aplikacji). Sama Aplikacja nie przesyła Twoich danych osobowych przez sieć; komunikacja związana z reklamami jest obsługiwana przez Google Mobile Ads SDK przez szyfrowane połączenia HTTPS.</p>
+<p>Dane użytkownika są przechowywane w prywatnym katalogu aplikacji, do którego inne aplikacje nie mają dostępu (od Android 4.4 — sandbox aplikacji). Sama Aplikacja nie przesyła Twoich danych osobowych przez sieć; komunikacja związana z reklamami rewarded jest obsługiwana przez Google Mobile Ads SDK przez szyfrowane połączenia HTTPS.</p>
 
 <h2>10. Zmiany polityki prywatności</h2>
 
@@ -129,6 +136,9 @@ E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
 
 <p><strong>Kanar Studio</strong><br>
 E-mail: <a href="mailto:glowdeck.app@gmail.com">glowdeck.app@gmail.com</a></p>
+
+<hr>
+<p><em>Ta polityka prywatności została zaktualizowana, aby uwzględnić funkcję eksportu wideo Reel Studio oraz powiązane z nią uprawnienia Androida.</em></p>
 
 </body>
 </html>
